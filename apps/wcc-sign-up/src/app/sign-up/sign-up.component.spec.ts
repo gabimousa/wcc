@@ -20,9 +20,9 @@ describe('SignUpComponent', () => {
   };
 
   const mockUser = {
-    firstName: 'First name',
-    lastName: 'Last name',
-    email: 'test@test.com',
+    firstName: 'Thomas',
+    lastName: 'Shelby',
+    email: 'thomas@shelby.co.uk',
   };
 
   const signUpMockService = new SignUpMockService();

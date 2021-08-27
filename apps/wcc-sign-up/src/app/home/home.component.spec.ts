@@ -16,9 +16,9 @@ describe('HomeComponent', () => {
 
   const mockUser = {
     _id: 'ID',
-    firstName: 'First name',
-    lastName: 'Last name',
-    email: 'test@test.com',
+    firstName: 'Thomas',
+    lastName: 'Shelby',
+    email: 'thomas@shelby.co.uk',
   };
 
   let fixture: ComponentFixture<HomeComponent>;
