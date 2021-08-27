@@ -39,11 +39,11 @@
             formControlName="email"
           />
           <mat-error *ngIf="form.get('email')?.hasError('required')">
-            email field is required
+            Email field is required
           </mat-error>
 
           <mat-error *ngIf="form.get('email')?.hasError('email')">
-            invalid email format
+            Invalid email format
           </mat-error>
         </mat-form-field>
       </p>
@@ -60,13 +60,13 @@
             <mat-error
               *ngIf="passwordsForm.get('password')?.hasError('required')"
             >
-              password field is required
+              Password field is required
             </mat-error>
 
             <mat-error
               *ngIf="passwordsForm.get('password')?.hasError('minlength')"
             >
-              password min length should be at least 8 characters
+              Password min length should be at least 8 characters
             </mat-error>
 
             <mat-error
@@ -83,7 +83,7 @@
                   ?.hasError('shouldNotContain_firstName')
               "
             >
-              password field cannot contain first name
+              Password field cannot contain first name
             </mat-error>
 
             <mat-error
@@ -93,7 +93,7 @@
                   ?.hasError('shouldNotContain_lastName')
               "
             >
-              password field cannot contain last name
+              Password field cannot contain last name
             </mat-error>
           </mat-form-field>
         </p>

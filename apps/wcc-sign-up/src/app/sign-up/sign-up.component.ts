@@ -2,7 +2,6 @@ import {
   Component,
   EventEmitter,
   HostBinding,
-  Input,
   OnDestroy,
   OnInit,
   Output,
@@ -80,6 +79,8 @@ export class SignUpComponent implements OnInit, OnDestroy {
    * OnInit lifecycle method triggered by Angular
    */
   public ngOnInit() {
+    // to ensure that the password field validity is updated after we update the firstName
+    // and lastName we watch those values and trigger updateValueAndValidity on password field manually
     const firstNameValueChanges = this.form
       .get('firstName')
       ?.valueChanges.pipe(startWith(null));
@@ -97,7 +98,6 @@ export class SignUpComponent implements OnInit, OnDestroy {
         .subscribe();
     }
   }
-
 
   /**
    * OnDestroy lifecycle method triggered by Angular
@@ -117,7 +117,6 @@ export class SignUpComponent implements OnInit, OnDestroy {
         .signUp({ firstName, lastName, email })
         .subscribe((result) => {
           if (result) {
-            console.log(result);
             this.signedUp.emit(result);
           }
         });
