@@ -5,7 +5,7 @@
       "projectType": "application",
       "root": "apps/wcc-sign-up",
       "sourceRoot": "apps/wcc-sign-up/src",
-      "prefix": "web-coding-challenge",
+      "prefix": "wcc",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'web-coding-challenge-root',
+  selector: 'wcc-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

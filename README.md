@@ -1,71 +1,45 @@
-
-
 # WebCodingChallenge
 
 This project was generated using [Nx](https://nx.dev).
 
 <p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
 
-🔎 **Smart, Extensible Build Framework**
+## Description
 
-## Quick Start & Documentation
+This application will allow a user use a sign up form
 
-[Nx Documentation](https://nx.dev/angular)
+Once the sign up procedure is completed a post request will be made to
+`https://demo-api.now.sh/users` containing the firstName, lastName and email fields.
 
-[10-minute video showing all Nx features](https://nx.dev/getting-started/intro)
+```
+{
+  firstName: "Thomas",
+  lastName: "Shelby",
+  email: "thomas@shelby.co.uk"
+}
+```
 
-[Interactive Tutorial](https://nx.dev/tutorial/01-create-application)
+The results of the request will be shown in json format on the screen.
 
-## Adding capabilities to your workspace
+If an error occurs the error will be logged to the console.
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+Signing up requires the user to enter a password that meets the following criteria:
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+- Should be a minimum of eight characters,
+- Should contain lower and uppercase letters,
+- Should not contain user’s first or last name.
 
-Below are our core plugins:
+## Installation
 
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
-- [React](https://reactjs.org)
-  - `ng add @nrwl/react`
-- Web (no framework frontends)
-  - `ng add @nrwl/web`
-- [Nest](https://nestjs.com)
-  - `ng add @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `ng add @nrwl/express`
-- [Node](https://nodejs.org)
-  - `ng add @nrwl/node`
+Using [npm](https://npmjs.org):
 
-There are also many [community plugins](https://nx.dev/community) you could add.
+```sh
+npm install
+```
 
-## Generate an application
+## Running the application
 
-Run `ng g @nrwl/angular:app my-app` to generate an application.
-
-> You can use any of the plugins above to generate applications as well.
-
-When using Nx, you can create multiple applications and libraries in the same workspace.
-
-## Generate a library
-
-Run `ng g @nrwl/angular:lib my-lib` to generate a library.
-
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are shareable across libraries and applications. They can be imported from `@web-coding-challenge/mylib`.
-
-## Development server
-
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng g component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng serve` to run the application.
 
 ## Running unit tests
 
@@ -86,20 +60,3 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
-
-
-
-
-
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.

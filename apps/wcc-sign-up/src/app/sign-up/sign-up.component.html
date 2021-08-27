@@ -1,0 +1,129 @@
+<mat-card>
+  <mat-card-title>Sign in</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <p>
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="First name"
+            formControlName="firstName"
+          />
+          <mat-error *ngIf="form.get('firstName')?.hasError('required')">
+            First name field is required
+          </mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="Last name"
+            formControlName="lastName"
+          />
+          <mat-error *ngIf="form.get('lastName')?.hasError('required')">
+            Last name field is required
+          </mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="Email"
+            formControlName="email"
+          />
+          <mat-error *ngIf="form.get('email')?.hasError('required')">
+            email field is required
+          </mat-error>
+
+          <mat-error *ngIf="form.get('email')?.hasError('email')">
+            invalid email format
+          </mat-error>
+        </mat-form-field>
+      </p>
+
+      <ng-container formGroupName="passwords">
+        <p>
+          <mat-form-field>
+            <input
+              type="password"
+              matInput
+              placeholder="Password"
+              formControlName="password"
+            />
+            <mat-error
+              *ngIf="passwordsForm.get('password')?.hasError('required')"
+            >
+              password field is required
+            </mat-error>
+
+            <mat-error
+              *ngIf="passwordsForm.get('password')?.hasError('minlength')"
+            >
+              password min length should be at least 8 characters
+            </mat-error>
+
+            <mat-error
+              *ngIf="passwordsForm.get('password')?.hasError('pattern')"
+            >
+              Password should have at least one lowercase and one uppercase
+              character
+            </mat-error>
+
+            <mat-error
+              *ngIf="
+                passwordsForm
+                  .get('password')
+                  ?.hasError('shouldNotContain_firstName')
+              "
+            >
+              password field cannot contain first name
+            </mat-error>
+
+            <mat-error
+              *ngIf="
+                passwordsForm
+                  .get('password')
+                  ?.hasError('shouldNotContain_lastName')
+              "
+            >
+              password field cannot contain last name
+            </mat-error>
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field>
+            <input
+              type="password"
+              matInput
+              placeholder="Confirm password"
+              formControlName="confirmPassword"
+              [errorStateMatcher]="matcher"
+            />
+            <mat-error *ngIf="passwordsForm.hasError('notSame')">
+              Password fields do not match
+            </mat-error>
+          </mat-form-field>
+        </p>
+      </ng-container>
+
+      <div class="button">
+        <button
+          type="submit"
+          mat-raised-button
+          color="primary"
+          [disabled]="form.invalid"
+        >
+          Sign up
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

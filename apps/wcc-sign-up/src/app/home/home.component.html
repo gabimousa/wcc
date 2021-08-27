@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <span class="title">Web Coding Challenge</span>
+  <span class="spacer"></span>
+  <span *ngIf="user"> {{ user.firstName }} {{ user.lastName }} </span>
+</mat-toolbar>
+<ng-container *ngIf="!user">
+  <wcc-sign-up (signedUp)="onSignedUp($event)"></wcc-sign-up>
+</ng-container>
+
+<div class="user-details" *ngIf="user">
+  <pre>
+    {{ user | json }}
+  </pre>
+</div>

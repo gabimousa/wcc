@@ -1,10 +1,12 @@
 import { TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { HomeMockComponent } from '../test';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      declarations: [AppComponent, HomeMockComponent],
     }).compileComponents();
   });
 
@@ -20,12 +22,11 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('wcc-sign-up');
   });
 
-  it('should render title', () => {
+  it('should render the home component', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome to wcc-sign-up!'
-    );
+    const debugElement = fixture.debugElement;
+    const home = debugElement.query(By.css('wcc-home')).componentInstance;
+
+    expect(home).toBeTruthy();
   });
 });
