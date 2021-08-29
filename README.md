@@ -47,11 +47,9 @@ Run `npm start` to run the application.
 
 ## Running unit tests
 
-Run `npm run test` to execute the unit tests via [Jest](https://jestjs.io).
-Or run `npm run test -- --watch` to execute the unit tests via [Jest](https://jestjs.io) in watch mode.
+Run `npm run test` to execute the unit tests or run `npm run test -- --watch` to execute the unit tests in watch mode via [Jest](https://jestjs.io).
 
 ## Running end-to-end tests
 
-Run `npm run e2e` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-Run `npm run e2e -- --watch` to execute the end-to-end tests via [Cypress](https://www.cypress.io) in watch mode.
+Run `npm run e2e` to execute the end-to-end tests or run `npm run e2e -- --watch` to execute the end-to-end tests in watch mode via [Cypress](https://www.cypress.io).
 
